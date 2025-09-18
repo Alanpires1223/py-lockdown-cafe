@@ -1,12 +1,13 @@
 import datetime
-from errors import NotVaccinatedError, OutdatedVaccineError, NotWearingMaskError
+from errors import (NotVaccinatedError, OutdatedVaccineError,
+                    NotWearingMaskError)
 
 
 class Cafe:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name):
         self.name = name
 
-    def visit_cafe(self, visitor: dict) -> str:
+    def visit_cafe(self, visitor: dict):
         # Verifica se está vacinado
         if "vaccine" not in visitor:
             raise NotVaccinatedError("Visitante não possui vacina registrada")
